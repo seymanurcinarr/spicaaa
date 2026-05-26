@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spica - Game AI Hub</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="Spica Logo" class="logo">
+                <h1>Spica</h1>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active">Keşfet</a>
+                <a href="profile.html" class="nav-link">Profilim</a>
+                <a href="#" class="nav-link">AI Sohbet</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- AI Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()">
+            <span>💬</span>
+        </button>
+        <div class="chat-box hidden">
+            <div class="chat-header">
+                <h3>Spica AI</h3>
+                <button class="close-chat" onclick="toggleChat()">✕</button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Bir oyun sor, öner, fiyat soruştur..." onkeypress="handleChatKeypress(event)">
+                <button onclick="sendChatMessage()">Gönder</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Oyun ara..." onkeyup="filterGames()">
+            <select id="genreFilter" onchange="filterGames()">
+                <option value="">Tüm Türler</option>
+                <option value="RPG">RPG</option>
+                <option value="Action">Aksiyon</option>
+                <option value="FPS">FPS</option>
+                <option value="Strateji">Strateji</option>
+                <option value="Spor">Spor</option>
+            </select>
+            <select id="platformFilter" onchange="filterGames()">
+                <option value="">Tüm Platformlar</option>
+                <option value="PC">PC</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Switch">Nintendo Switch</option>
+                <option value="Mobile">Mobile</option>
+            </select>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <!-- Oyunlar buraya JS ile yüklenecek -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Spica - Game AI Hub. AI destekli oyun önerileri. | <a href="#">Gizlilik</a> | <a href="#">Kullanım Şartları</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

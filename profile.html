@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilim - Spica</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="Spica Logo" class="logo">
+                <h1>Spica</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Keşfet</a>
+                <a href="#" class="nav-link active">Profilim</a>
+                <a href="#" class="nav-link">AI Sohbet</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Content -->
+    <main class="main-content">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="margin-bottom: 2rem;">👤 Profilim</h2>
+
+            <!-- Tabs -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color);">
+                <button class="tab-btn active" onclick="showTab('liked')">❤️ Beğendiklerim</button>
+                <button class="tab-btn" onclick="showTab('played')">✓ Oynadıklarım</button>
+            </div>
+
+            <!-- Liked Games Tab -->
+            <div id="liked-tab" class="tab-content">
+                <h3>Beğendiklerim</h3>
+                <div id="likedGames" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
+                    <p style="color: #999;">Henüz beğendiğiniz oyun yok.</p>
+                </div>
+            </div>
+
+            <!-- Played Games Tab -->
+            <div id="played-tab" class="tab-content" style="display: none;">
+                <h3>Oynadıklarım</h3>
+                <div id="playedGames" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
+                    <p style="color: #999;">Henüz oyun eklemediniz.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Spica - Game AI Hub. AI destekli oyun önerileri.</p>
+    </footer>
+
+    <style>
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-purple);
+            border-bottom-color: var(--primary-purple);
+        }
+
+        .tab-content h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+    </style>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            document.getElementById('liked-tab').style.display = 'none';
+            document.getElementById('played-tab').style.display = 'none';
+
+            // Show selected tab
+            document.getElementById(tabName + '-tab').style.display = 'block';
+
+            // Update button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

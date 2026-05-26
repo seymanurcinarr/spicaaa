@@ -1,0 +1,18 @@
+# Config with API Key
+config.php
+
+# Database backups
+*.sql.bak
+
+# Local development
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
